@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { getFilmsById } from "../servises/api";
 import {
   Outlet,
@@ -11,7 +11,7 @@ import { FlexBox, Box, Button, IMG, BorderBox } from "../App.styled";
 
 const BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -39,19 +39,19 @@ export const MovieDetails = () => {
         Go back
       </Button>
       <BorderBox>
-      <FlexBox>
-        <IMG src={BASE_IMG_URL + movie.poster_path} alt={movie.title} />
-        <Box>
-          <h2>
-            {movie.title}({releaseDate})
-          </h2>
-          <p>User score: {userScore}%</p>
-          <h3>Overview</h3>
-          <p>{movie.overview}</p>
-          <h3>Genres</h3>
-          <p>{genres}</p>
-        </Box>
-      </FlexBox>
+        <FlexBox>
+          <IMG src={BASE_IMG_URL + movie.poster_path} alt={movie.title} />
+          <Box>
+            <h2>
+              {movie.title}({releaseDate})
+            </h2>
+            <p>User score: {userScore}%</p>
+            <h3>Overview</h3>
+            <p>{movie.overview}</p>
+            <h3>Genres</h3>
+            <p>{genres}</p>
+          </Box>
+        </FlexBox>
       </BorderBox>
       <BorderBox>
         <p>Additional information</p>
@@ -68,7 +68,11 @@ export const MovieDetails = () => {
           </li>
         </ul>
       </BorderBox>
-      <Outlet />
+      <Suspense fallback={<p>Subpaje is loading...</p>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
+
+export default MovieDetails;

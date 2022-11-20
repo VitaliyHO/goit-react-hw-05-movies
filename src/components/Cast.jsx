@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { IMG } from "../App.styled";
 import { getMovieCredits } from "../servises/api";
 
-export const Cast = () => {
+const Cast = () => {
   const BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
 
   const [cast, setCast] = useState([]);
@@ -28,3 +28,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;

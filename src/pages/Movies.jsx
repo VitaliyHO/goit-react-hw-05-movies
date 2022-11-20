@@ -3,7 +3,7 @@ import { getFilmsByQuery } from "../servises/api";
 import { useSearchParams } from 'react-router-dom';
 import { MoviesList } from "../components/MoviesList";
 
-export const Movies = () => {
+const Movies = () => {
 
     const [movie, setMovie] = useState([]);
     const [query, setQuery] = useState('');
@@ -33,4 +33,6 @@ export const Movies = () => {
         <MoviesList movies={movie}/>
         </>
     )
-}
+};
+
+export default Movies;
