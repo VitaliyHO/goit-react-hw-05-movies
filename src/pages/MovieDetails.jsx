@@ -7,7 +7,7 @@ import {
   NavLink,
   useParams,
 } from "react-router-dom";
-import { FlexBox, Box, Button, IMG, BorderBox } from "../App.styled";
+import { Link, FlexBox, Box, Button, IMG, BorderBox, Ul } from "../App.styled";
 
 const BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
 
@@ -55,18 +55,18 @@ const MovieDetails = () => {
       </BorderBox>
       <BorderBox>
         <p>Additional information</p>
-        <ul>
+        <Ul>
           <li>
-            <NavLink to="cast" state={{ from: location.state.from }}>
+            <Link to="cast" state={{ from: location.state.from }}>
               Cast
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="reviews" state={{ from: location.state.from }}>
+            <Link to="reviews" state={{ from: location.state.from }}>
               Reviews
-            </NavLink>
+            </Link>
           </li>
-        </ul>
+        </Ul>
       </BorderBox>
       <Suspense fallback={<p>Subpaje is loading...</p>}>
         <Outlet />
