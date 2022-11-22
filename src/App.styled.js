@@ -26,7 +26,7 @@ export const Main = styled.main`
 
 export const FlexBox = styled.div`
   display: flex;
-  padding: 10px;
+  padding: 10px 0;
 `;
 
 export const Box = styled.div`
@@ -67,6 +67,21 @@ export const ListLink = styled(NavLink)`
 
 export const Button = styled.button`
   display: block;
+  padding 4px 8px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  color: #5733ff;
+  background: rgba(255,87,51, .5);
+
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+  transition-delay: 0;
+
+  &:hover {
+    background: #ff5733;
+  }
 `;
 
 export const Ul = styled.ul`
@@ -82,7 +97,7 @@ export const Li = styled.li`
     transform: perspective(400px) rotateY(10deg) rotateX(5deg);
 
     transition-property: rotateY();
-    transition-duration: 500ms;
+    transition-duration: 300ms;
     transition-timing-function: linear;
     transition-delay: 0;
 

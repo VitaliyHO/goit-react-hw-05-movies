@@ -4,10 +4,9 @@ import {
   Outlet,
   useNavigate,
   useLocation,
-  NavLink,
   useParams,
 } from "react-router-dom";
-import { Link, FlexBox, Box, Button, IMG, BorderBox, Ul } from "../App.styled";
+import { Link, FlexBox, Box, Button, IMG, BorderBox, Ul, Container } from "../App.styled";
 
 const BASE_IMG_URL = "https://image.tmdb.org/t/p/w500";
 
@@ -34,7 +33,7 @@ const MovieDetails = () => {
   };
 
   return (
-    <>
+    <Container>
       <Button onClick={handleGoBack} type="button">
         Go back
       </Button>
@@ -71,7 +70,7 @@ const MovieDetails = () => {
       <Suspense fallback={<p>Subpaje is loading...</p>}>
         <Outlet />
       </Suspense>
-    </>
+    </Container>
   );
 };
 
