@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
   max-width: 1080px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 `;
@@ -37,6 +38,15 @@ export const BorderBox = styled.div`
   border-bottom: 2px solid grey;
 `;
 
+export const Form = styled.form`
+  text-align: center;
+`;
+
+export const Input = styled.input`
+  margin-right: 15px;
+  font-size: 24px;
+`;
+
 export const H1 = styled.h1`
   text-transform: uppercase;
 `;
@@ -66,12 +76,12 @@ export const ListLink = styled(NavLink)`
 `;
 
 export const Button = styled.button`
-  display: block;
   padding 4px 8px;
   border-radius: 4px;
   border: none;
+  font-size: 20px;
   font-weight: 700;
-  color: #5733ff;
+  color: #184a44;
   background: rgba(255,87,51, .5);
 
   transition-property: background;

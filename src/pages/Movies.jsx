@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getFilmsByQuery } from "../servises/api";
 import { useSearchParams } from 'react-router-dom';
 import { MoviesList } from "../components/MoviesList";
+import { Form, Button, Container, Input } from "../App.styled";
 
 const Movies = () => {
 
@@ -25,13 +26,13 @@ const Movies = () => {
     }
 
     return(
-        <>
-        <form onSubmit={onSubmit}>
-            <input onChange={onInputChange} type="text" />
-            <button type="submit">Search</button>
-        </form>
+        <Container>
+        <Form onSubmit={onSubmit}>
+            <Input onChange={onInputChange} type="text" />
+            <Button type="submit">Search</Button>
+        </Form>
         <MoviesList movies={movie}/>
-        </>
+        </Container>
     )
 };
 
